@@ -33,12 +33,12 @@ cacheSolve <- function(x, ...) {
      m <- x$getinverse() 
     
     if(!is.null(m)) {
-        message("getting cached Inverse Matrix") 
+        message("getting cached Inverse Matrix") ## This will be performed in case the matrix has already been inveresed
         return(m) 
     } 
     
     data <- x$get() 
-    m <- solve(data) 
+    m <- solve(data)  ## The actual action of inversing the matrix
     x$setinverse(m) 
     m 
 
